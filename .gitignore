@@ -28,7 +28,10 @@ wheels/
 
 # Output files
 *.png
-*.csv
+
+# Data directories (raw exports + compiled CSVs)
+data/raw/
+data/compiled/
 
 # MacOS
 .DS_Store
