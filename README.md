@@ -38,6 +38,7 @@ Cell order in `Notebooks/02_celegans_volume_analysis.ipynb` reflects the updated
 3. **N2 normalization** – normalizes to the first 5 s, applies a 28-frame rolling mean, and plots mean ± SEM.
 4. **Multi-genotype pipeline** – iterates over every compiled genotype, applies shared filters, produces both smoothed raw normalized curves (56-frame window) and per-track exponential-fit curves, then plots genotype overlays for each representation.
 5. **Fit summary** – aggregates the per-track exponential parameters (A, k, half-life) into genotype-level tables for downstream comparisons.
+6. **Per-track decay statistics** – plots per-track exponential k values as bar charts with individual points, reports ANOVA plus Holm-adjusted pairwise Welch tests, and annotates group sizes to highlight significant genotype differences.
 
 ## Volume, Filtering, and Normalization
 
@@ -70,6 +71,7 @@ Cell order in `Notebooks/02_celegans_volume_analysis.ipynb` reflects the updated
 - Notebook-rendered plots:
     - Smoothed raw normalized mean ± SEM across genotypes.
     - Exponential-fit mean ± SEM across genotypes.
+    - Per-track exponential decay rates with individual track points, group means, and ±SE bars.
 - Fit parameter tables showing `A`, `k`, and half-life per genotype.
 
 ## Notes and Assumptions
