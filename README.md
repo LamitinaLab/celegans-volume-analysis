@@ -7,8 +7,8 @@ Analysis of volume changes over time in *C. elegans* across multiple genotypes u
 ```
 celegans-volume-analysis/
 ├── Notebooks/
-│   ├── 02_celegans_volume_analysis.ipynb   # Primary workflow
-│   └── celegans_volume_analysis.ipynb      # Historical prototype
+│   ├── 01_compile_genotype_data.ipynb      # Interactive data compilation
+│   └── 02_celegans_volume_analysis.ipynb   # Primary analysis workflow
 ├── scripts/
 │   ├── compile_genotype_data.py            # Builds compiled CSVs per metric
 │   └── run_volume_analysis.py              # Convenience runner (stub)
@@ -19,7 +19,17 @@ celegans-volume-analysis/
 └── README.md
 ```
 
-## Current Workflow (Notebook 02)
+## Notebook 01 – Compile Genotype Data
+
+Use `Notebooks/01_compile_genotype_data.ipynb` when you need to rebuild the compiled CSVs from freshly exported Wormlab files. The notebook walks through:
+
+1. Locating raw CSV folders under `data/raw/` and normalizing their headers.
+2. Aligning `Frame`/`Time` columns across area/length/fit metrics.
+3. Writing `*_compiled_area.csv`, `*_compiled_length.csv`, and `*_compiled_fit.csv` into `data/compiled/` for every genotype.
+
+This notebook mirrors the logic in `scripts/compile_genotype_data.py`, but keeps the steps visible in Jupyter with intermediate diagnostics.
+
+## Notebook 02 – Volume Analysis Workflow
 
 Cell order in `Notebooks/02_celegans_volume_analysis.ipynb` reflects the updated analysis strategy:
 
@@ -45,14 +55,13 @@ Cell order in `Notebooks/02_celegans_volume_analysis.ipynb` reflects the updated
 ## Running the Analysis
 
 1. Install dependencies (in a virtual environment if desired):
-     ```bash
-     pip install -r requirements.txt
-     ```
-2. Generate compiled area/length/fit CSVs (optional, only if raw data changed):
-     ```bash
-     python scripts/compile_genotype_data.py
-     ```
-3. Open `Notebooks/02_celegans_volume_analysis.ipynb` in Jupyter (VS Code, JupyterLab, etc.) and run the cells top to bottom. The notebook writes per-genotype volume CSVs, plots both curve types, and saves summary tables in `celegans-volume-analysis/`.
+    ```bash
+    pip install -r requirements.txt
+    ```
+2. Prepare compiled inputs (pick one of the options):
+    - **Interactive:** open `Notebooks/01_compile_genotype_data.ipynb`, set the raw-data root if needed, and run all cells to regenerate the compiled area/length/fit CSVs.
+    - **Batch script:** run `python scripts/compile_genotype_data.py` for the same result without a notebook.
+3. Launch `Notebooks/02_celegans_volume_analysis.ipynb` in Jupyter (VS Code, JupyterLab, etc.) and run the cells top to bottom. The notebook writes per-genotype volume CSVs, plots both curve types, and saves summary tables in `celegans-volume-analysis/`.
 
 ## Key Outputs
 
