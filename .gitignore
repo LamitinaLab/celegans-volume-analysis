@@ -29,9 +29,19 @@ wheels/
 # Output files
 *.png
 
-# Data directories (raw exports + compiled CSVs)
-data/raw/
-data/compiled/
+# Data directories - exclude data files but keep folder structure
+# Raw data
+data/raw/**/*
+!data/raw/**/.gitkeep
+!data/raw/**/config.yaml
+
+# Processed data
+data/processed/**/*
+!data/processed/.gitkeep
+
+# Archives
+data/archive/**/*
+!data/archive/.gitkeep
 
 # MacOS
 .DS_Store

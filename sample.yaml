@@ -1,0 +1,100 @@
+# ============================
+# Experiment-level metadata
+# ============================
+
+assay: volume
+experiment_id: 2026-02-23_usp5AID_1mMauxin
+date: 2026-02-23
+
+# ---- Genotype information (ONE strain per file) ----
+genotype: osm-7(n1515); gpdh-1(dr154)
+strain: OG?????
+background: N2        #  lab N2
+outcrosses: unknown        # Crossed to replace si58 with si7, then crossed into bkIs670
+age: Day 1 #L4=day 0
+
+# ---- Treatment ----
+NaCl_concentration_mM: 550
+buffer: M9
+
+# ---- Personnel ----
+experimenter: TL
+lab: Lamitina
+
+# ============================
+# Arena information
+# ============================
+
+arena:
+  type: single_chamber_acrylic
+  diameter_mm: 35        # <-- replace ??
+  thickness_mm: 0.1
+
+# ============================
+# Imaging parameters
+# ============================
+
+imaging:
+  frame_rate_hz: 14
+  resolution_px: [2456, 2052]
+  camera: Basler_acA2440_35um
+  illumination: IR
+  intensity_value: 27
+  scale_um_px: 10    
+  temperature_C: 20      # growth temp
+
+# ============================
+# WormLab configuration
+# ============================
+
+wormlab:
+  version: 2024.3
+  tracking_mode: multiworm
+  configuration: Todd_Osr
+
+# ============================
+# Notes
+# ============================
+
+notes: >
+  Standard volume assay.
+  Animals age-synchronized.
+  Day 1 adults.
+  Recorded immediately after solution mixing.
+
+# ============================
+# Per-video metadata
+# Only include entries that differ from defaults
+# ============================
+
+videos:
+
+  "0001":
+    file: 0001.avi
+    usable: true
+
+  "0002":
+    file: 0002.avi
+    usable: true
+
+  "0003":
+    file: 0003.avi
+    usable: true
+
+  "0004":
+    file: 0004.avi
+    usable: true
+
+    # Example exclusion
+  # "0003":
+  #   file: RK202_0003.avi
+  #   usable: false
+  #   exclusion_reason: debris in arena
+
+  # Example override
+  # "0004":
+  #   file: RK202_0004.avi
+  #   usable: true
+  #   analysis_overrides:
+  #     min_track_length_frames: 200
+  #     smoothing_window_frames: 7
