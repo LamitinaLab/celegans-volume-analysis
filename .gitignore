@@ -29,6 +29,9 @@ wheels/
 # Output files
 *.png
 
+# Oversized generated result (kept local; exceeds GitHub 100MB file limit)
+data/results/cross_modal_decline_progress_tracks_long.csv
+
 # Data directories - exclude data files but keep folder structure
 # Raw data
 data/raw/**/*

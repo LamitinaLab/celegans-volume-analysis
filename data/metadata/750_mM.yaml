@@ -1,0 +1,96 @@
+# ============================
+# Experiment-level metadata
+# ============================
+
+assay: volume
+experiment_id: 260117
+assay_date: 260117
+analysis_date:
+
+# ---- Genotype information (ONE strain per file) ----
+genotype: +/+
+strain: N2
+background: N2        #  lab N2
+outcrosses: unknown        # 
+age: Day 1 #L4=day 0
+
+# ---- Treatment ----
+NaCl_concentration_mM: 750
+buffer: M9
+
+# ---- Personnel ----
+experimenter: TL
+lab: Lamitina
+
+# ============================
+# Arena information
+# ============================
+
+arena:
+  type: single_chamber_acrylic
+  diameter_mm: 35        # <-- replace ??
+  thickness_mm: 0.1
+
+# ============================
+# Imaging parameters
+# ============================
+
+imaging:
+  frame_rate_hz: 14
+  resolution_px: [2456, 2052]
+  camera: Basler_acA2440_35um
+  illumination: IR
+  intensity_value: 27
+  scale_um_px: 10    
+  temperature_C: 20      # growth temp
+
+# ============================
+# WormLab configuration
+# ============================
+
+wormlab:
+  version: 2024.3
+  tracking_mode: multiworm
+  configuration: Todd_Osr
+
+# ============================
+# Notes
+# ============================
+
+notes: >
+  Standard volume assay.
+  Animals age-synchronized.
+  Day 1 adults.
+  Recorded immediately after solution mixing.
+
+# ============================
+# Per-video metadata
+# Only include entries that differ from defaults
+# ============================
+
+videos:
+
+  "0001":
+    file: 0001.avi
+    usable: true
+    notes: lots of debris; many worms could not be used and were deleted from analysis
+
+  "0002":
+    file: 0002.avi
+    usable: true
+    notes: lots of debris; many worms could not be used and were deleted from analysis
+
+  
+  # Example exclusion
+  # "0003":
+  #   file: RK202_0003.avi
+  #   usable: false
+  #   exclusion_reason: debris in arena
+
+  # Example override
+  # "0004":
+  #   file: RK202_0004.avi
+  #   usable: true
+  #   analysis_overrides:
+  #     min_track_length_frames: 200
+  #     smoothing_window_frames: 7
