@@ -53,5 +53,8 @@ data/archive/**/*
 .vscode/
 .idea/
 
-# Raw experimental data
+# Experimental data
 data/raw/
+
+# Generated analysis outputs
+data/results/
