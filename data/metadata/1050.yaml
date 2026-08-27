@@ -3,21 +3,21 @@
 # ============================
 
 assay: volume
-experiment_id: 260811
-assay_date: 260811
-analysis_date: 260821
+experiment_id: 260117
+condition_order: 10
+assay_date: 260117
+analysis_date:
 
 # ---- Genotype information (ONE strain per file) ----
-genotype: reSi7 I; unc-18(knu969[unc-18::AID*]) X
-strain: DLW114
+genotype: +/+
+strain: N2
 background: N2        #  lab N2
-outcrosses: 3        # 
+outcrosses: unknown        # 
 age: Day 1 #L4=day 0
 
 # ---- Treatment ----
-NaCl_concentration_mM: 51
+NaCl_concentration_mM: 550
 buffer: M9
-auxin_concentration_mM: 1.0
 
 # ---- Personnel ----
 experimenter: TL
@@ -28,10 +28,9 @@ lab: Lamitina
 # ============================
 
 arena:
-  type: single_chamber_acrylic_v2.0
-  diameter_mm: 20        # <-- replace ??
+  type: single_chamber_acrylic
+  diameter_mm: 35        # <-- replace ??
   thickness_mm: 0.1
-  volume_ul: 40
 
 # ============================
 # Imaging parameters
@@ -43,7 +42,7 @@ imaging:
   lens_fstop_mm:  4.0
   camera: Basler_acA2440_35um
   illumination: IR
-  intensity_value: 23
+  intensity_value: 27
   scale_um_px: 10    
   temperature_C: 20      # growth temp
 
@@ -54,14 +53,14 @@ imaging:
 wormlab:
   version: 2024.3
   tracking_mode: multiworm
-  configuration: TL_OSR_new_chip_270801
+  configuration: Todd_Osr
 
 # ============================
 # Notes
 # ============================
 
 notes: >
-  Standard volume assay but with new chips.
+  Standard volume assay.
   Animals age-synchronized.
   Day 1 adults.
   Recorded immediately after solution mixing.
@@ -82,11 +81,7 @@ videos:
     file: 0002.avi
     usable: true
 
-  "0003":
-    file: 0003.avi
-    usable: true
-
-   
+  
   # Example exclusion
   # "0003":
   #   file: RK202_0003.avi
