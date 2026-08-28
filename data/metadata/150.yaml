@@ -3,20 +3,28 @@
 # ============================
 
 assay: volume
-experiment_id: 260117
-condition_order: 1
-assay_date: 260117
-analysis_date:
+experiment_id: 260311
+assay_date: 260311
+analysis_date: 260828
+condition_order: 1          # display/analysis order within experiment
 
 # ---- Genotype information (ONE strain per file) ----
 genotype: +/+
 strain: N2
-background: N2        #  lab N2
-outcrosses: unknown        # 
-age: Day 1 #L4=day 0
+background: N2             # genetic background
+outcrosses: unknown        # number of outcrosses, if known
+age: Day 1                 # L4 = Day 0
 
 # ---- Treatment ----
-NaCl_concentration_mM: 550
+treatment: none                 # e.g. none, auxin, levamisole, heat_shock
+treatment_level: null           # concentration, temperature, etc.
+treatment_level_unit: null      # e.g. mM, uM, degC
+treatment_duration: null        # treatment exposure duration
+treatment_duration_unit: null   # e.g. min, h, d
+treatment_timing: null          # pre_assay, during_assay, or continuous
+
+# ---- Assay conditions ----
+NaCl_concentration_mM: 150      # NaCl concentration during volume assay
 buffer: M9
 
 # ---- Personnel ----
@@ -78,6 +86,22 @@ videos:
     notes: 
 
   "0002":
+    file: 0002.avi
+    usable: true
+
+  "0003":
+    file: 0002.avi
+    usable: true
+
+  "0004":
+    file: 0002.avi
+    usable: true
+
+  "0005":
+    file: 0002.avi
+    usable: true
+
+  "0006":
     file: 0002.avi
     usable: true
 

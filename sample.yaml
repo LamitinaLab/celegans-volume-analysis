@@ -6,16 +6,25 @@ assay: volume
 experiment_id: 260117
 assay_date: 260117
 analysis_date:
+condition_order: 0          # display/analysis order within experiment
 
 # ---- Genotype information (ONE strain per file) ----
 genotype: +/+
 strain: N2
-background: N2        #  lab N2
-outcrosses: unknown        # 
-age: Day 1 #L4=day 0
+background: N2             # genetic background
+outcrosses: unknown        # number of outcrosses, if known
+age: Day 1                 # L4 = Day 0
 
 # ---- Treatment ----
-NaCl_concentration_mM: 550
+treatment: none                 # e.g. none, auxin, levamisole, heat_shock
+treatment_level: null           # concentration, temperature, etc.
+treatment_level_unit: null      # e.g. mM, uM, degC
+treatment_duration: null        # treatment exposure duration
+treatment_duration_unit: null   # e.g. min, h, d
+treatment_timing: null          # pre_assay, during_assay, or continuous
+
+# ---- Assay conditions ----
+NaCl_concentration_mM: 550      # NaCl concentration during volume assay
 buffer: M9
 
 # ---- Personnel ----
@@ -28,7 +37,7 @@ lab: Lamitina
 
 arena:
   type: single_chamber_acrylic
-  diameter_mm: 35        # <-- replace ??
+  diameter_mm: 35
   thickness_mm: 0.1
 
 # ============================
@@ -38,12 +47,12 @@ arena:
 imaging:
   frame_rate_hz: 14
   resolution_px: [2456, 2052]
-  lens_fstop_mm:  4.0
+  lens_fstop_mm: 4.0
   camera: Basler_acA2440_35um
   illumination: IR
   intensity_value: 27
-  scale_um_px: 10    
-  temperature_C: 20      # growth temp
+  scale_um_px: 10
+  temperature_C: 20             # growth/assay temperature
 
 # ============================
 # WormLab configuration
@@ -74,13 +83,12 @@ videos:
   "0001":
     file: 0001.avi
     usable: true
-    notes: 
+    notes:
 
   "0002":
     file: 0002.avi
     usable: true
 
-  
   # Example exclusion
   # "0003":
   #   file: RK202_0003.avi
