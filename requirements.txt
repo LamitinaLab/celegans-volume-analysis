@@ -3,5 +3,6 @@ numpy
 matplotlib
 seaborn
 scipy
-jupyter
 pyyaml
+jupyter
+ipykernel

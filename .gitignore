@@ -6,6 +6,7 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
 ENV/
 build/
 develop-eggs/
@@ -29,18 +30,24 @@ wheels/
 # Output files
 *.png
 
-# Oversized generated result (kept local; exceeds GitHub 100MB file limit)
-data/results/cross_modal_decline_progress_tracks_long.csv
+# Data directories - exclude dataset-specific files but keep folder structure
 
-# Data directories - exclude data files but keep folder structure
 # Raw data
 data/raw/**/*
 !data/raw/**/.gitkeep
 !data/raw/**/config.yaml
 
+# Dataset-specific metadata
+data/metadata/**/*
+!data/metadata/.gitkeep
+
 # Processed data
 data/processed/**/*
 !data/processed/.gitkeep
+
+# Generated analysis outputs
+data/results/**/*
+!data/results/.gitkeep
 
 # Archives
 data/archive/**/*
@@ -52,9 +59,3 @@ data/archive/**/*
 # IDE
 .vscode/
 .idea/
-
-# Experimental data
-data/raw/
-
-# Generated analysis outputs
-data/results/
